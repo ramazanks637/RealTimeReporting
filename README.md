@@ -42,9 +42,7 @@ xUnit ile yazılmış test senaryoları:
 - OrdersController
 - ReportService
 - CustomerService
-- DailyTotalJob
-- HourlySummaryJob
-- MinutelyDailyTotalJob
+
 
 ## 🧠 Ek Özellikler
 - Ortam bazlı konfigürasyon (Development, Docker)
@@ -60,7 +58,7 @@ xUnit ile yazılmış test senaryoları:
 
 ## 🧹 Temizlik & Reset Komutları
 ```bash
-docker-compose down -v
+docker-compose down -v ## -v parametresi kullanılırsa Databasedeki tüm kayıtlar ile beraber temizler  kullanılmadığında ise sadece container'i temizler.
 # veya
 dotnet ef database drop --project RealTimeReporting.Infrastructure
 
