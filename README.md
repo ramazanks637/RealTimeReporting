@@ -113,6 +113,17 @@ chmod +x init.sh
 ./init.sh
 ```
 
+### 🖥️ Bash Script Kullanımı (Windows için Git Bash önerilir)
+Windows kullanıyorsanız `init.sh` scriptini çalıştırmak için [Git Bash](https://git-scm.com/downloads) yükleyip aşağıdaki komutları kullanabilirsiniz:
+
+```bash
+chmod +x init.sh
+./init.sh
+```
+
+> Bu script, EF migration, restore ve Docker build işlemlerini otomatik olarak yapar.
+
+
 ## ✅ Tamamlanan Özellikler (Check List)
 - [x] PostgreSQL veritabanı kullanımı
 - [x] Redis önbellekleme mekanizması
