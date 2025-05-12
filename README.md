@@ -24,7 +24,8 @@
 ## ⚙️ Kurulum (Docker ile)
 ```bash
 docker-compose down
-docker-compose up --build
+docker-compose build
+docker-compose up
 ```
 Bu komutlar şu işlemleri otomatik yapar:
 - PostgreSQL ve Redis container'ını başlatır
@@ -63,6 +64,26 @@ docker-compose down -v ## -v parametresi kullanılırsa Databasedeki tüm kayıt
 dotnet ef database drop --project RealTimeReporting.Infrastructure
 
 dotnet ef database update --project RealTimeReporting.Infrastructure
+```
+
+## 📊 Test Coverage Raporu (Opsiyonel)
+
+### ✅ Coverage Almak İçin testleri çalıştır ve coverage verisini topla:
+```bash
+Bu işlem sonunda TestResults/ klasöründe bir coverage.cobertura.xml dosyası oluşur.
+
+dotnet test RealTimeReporting.Tests --collect:"XPlat Code Coverage"
+```
+
+### ✅ Coverage raporunu HTML olarak görmek için:
+```bash
+reportgenerator -reports:"**/coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
+start coveragereport/index.html  -- Ekranda tüm coverage raporunu açar.
+```
+reportgenerator daha önce yüklendiyse tekrar yüklemeye gerek yok. Yüklü değilse:
+### 🛠️ Gerekli Araç (Sadece İlk Seferlik)
+```bash
+dotnet tool install -g dotnet-reportgenerator-globaltool
 ```
 
 ## 🚀 Başlangıç: Projeyi Sıfırdan Ayağa Kaldırmak
