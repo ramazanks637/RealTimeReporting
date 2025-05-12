@@ -24,7 +24,8 @@
 ## ⚙️ Kurulum (Docker ile)
 ```bash
 docker-compose down
-docker-compose up --build
+docker-compose build
+docker-compose up
 ```
 Bu komutlar şu işlemleri otomatik yapar:
 - PostgreSQL ve Redis container'ını başlatır
