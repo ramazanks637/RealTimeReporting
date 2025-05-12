@@ -19,11 +19,5 @@ RUN dotnet publish "RealTimeReporting.API.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
-
-# wait-for-postgres.sh scriptini kopyala ve çalıştırılabilir yap
-COPY RealTimeReporting.API/wait-for-postgres.sh ./wait-for-postgres.sh
-RUN chmod +x ./wait-for-postgres.sh
-
 COPY --from=build /app/publish .
-
-ENTRYPOINT ["./wait-for-postgres.sh", "dotnet", "RealTimeReporting.API.dll"]
+ENTRYPOINT ["dotnet", "RealTimeReporting.API.dll"]
