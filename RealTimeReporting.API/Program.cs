@@ -82,7 +82,7 @@ RecurringJob.AddOrUpdate<HourlySummaryJob>(
 RecurringJob.AddOrUpdate<MinutelyDailyTotalJob>(
     "minutely-daily-total-job",
     job => job.Execute(),
-    "* * * * *" // Her 5 dakika
+    "* * * * *" // Her dakika
 );
 
 
